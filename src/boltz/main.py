@@ -825,7 +825,7 @@ def cli() -> None:
 @click.option(
     "--cache",
     type=click.Path(exists=False),
-    help="The directory where to download the data and model. Default is ~/.boltz.",
+    help="The directory where to download the data and model.",
     default="/home.galaxy4/share/boltz",
 )
 @click.option(
