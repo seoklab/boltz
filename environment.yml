@@ -25,3 +25,5 @@ dependencies:
   - biopython=1.84
   - scipy<2.0
   - pip
+  - pip:
+      - fairscale~=0.4
