@@ -825,11 +825,8 @@ def cli() -> None:
 @click.option(
     "--cache",
     type=click.Path(exists=False),
-    help=(
-        "The directory where to download the data and model. "
-        "Default is ~/.boltz, or $BOLTZ_CACHE if set."
-    ),
-    default=get_cache_path,
+    help="The directory where to download the data and model. Default is ~/.boltz.",
+    default="/home.galaxy4/share/boltz",
 )
 @click.option(
     "--checkpoint",
@@ -1042,7 +1039,7 @@ def cli() -> None:
 def predict(  # noqa: C901, PLR0915, PLR0912
     data: str,
     out_dir: str,
-    cache: str = "~/.boltz",
+    cache: str,
     checkpoint: Optional[str] = None,
     affinity_checkpoint: Optional[str] = None,
     devices: int = 1,
