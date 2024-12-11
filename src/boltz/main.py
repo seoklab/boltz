@@ -472,23 +472,23 @@ def cli() -> None:
     help="Seed to use for random number generator. Default is None (no seeding).",
     default=None,
 )
-@click.option(
-    "--use_msa_server",
-    is_flag=True,
-    help="Whether to use the MMSeqs2 server for MSA generation. Default is False.",
-)
-@click.option(
-    "--msa_server_url",
-    type=str,
-    help="MSA server url. Used only if --use_msa_server is set. ",
-    default="https://api.colabfold.com",
-)
-@click.option(
-    "--msa_pairing_strategy",
-    type=str,
-    help="Pairing strategy to use. Used only if --use_msa_server is set. Options are 'greedy' and 'complete'",
-    default="greedy",
-)
+# @click.option(
+#     "--use_msa_server",
+#     is_flag=True,
+#     help="Whether to use the MMSeqs2 server for MSA generation. Default is False.",
+# )
+# @click.option(
+#     "--msa_server_url",
+#     type=str,
+#     help="MSA server url. Used only if --use_msa_server is set. ",
+#     default="https://api.colabfold.com",
+# )
+# @click.option(
+#     "--msa_pairing_strategy",
+#     type=str,
+#     help="Pairing strategy to use. Used only if --use_msa_server is set. Options are 'greedy' and 'complete'",
+#     default="greedy",
+# )
 def predict(
     data: str,
     out_dir: str,
@@ -505,9 +505,9 @@ def predict(
     num_workers: int = 2,
     override: bool = False,
     seed: Optional[int] = None,
-    use_msa_server: bool = False,
-    msa_server_url: str = "https://api.colabfold.com",
-    msa_pairing_strategy: str = "greedy",
+    # use_msa_server: bool = False,
+    # msa_server_url: str = "https://api.colabfold.com",
+    # msa_pairing_strategy: str = "greedy",
 ) -> None:
     """Run predictions with Boltz-1."""
     # If cpu, write a friendly warning
@@ -567,9 +567,9 @@ def predict(
         data=data,
         out_dir=out_dir,
         ccd_path=ccd_path,
-        use_msa_server=use_msa_server,
-        msa_server_url=msa_server_url,
-        msa_pairing_strategy=msa_pairing_strategy,
+        use_msa_server=False,
+        msa_server_url="",
+        msa_pairing_strategy="",
     )
 
     # Load processed data
