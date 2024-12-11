@@ -399,7 +399,7 @@ def cli() -> None:
     "--cache",
     type=click.Path(exists=False),
     help="The directory where to download the data and model. Default is ~/.boltz.",
-    default="~/.boltz",
+    default="/home.galaxy4/share/boltz",
 )
 @click.option(
     "--checkpoint",
@@ -492,7 +492,7 @@ def cli() -> None:
 def predict(
     data: str,
     out_dir: str,
-    cache: str = "~/.boltz",
+    cache: str,
     checkpoint: Optional[str] = None,
     devices: int = 1,
     accelerator: str = "gpu",
